@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chatbot Cây Trồng - Green</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- SheetJS để đọc Excel -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="chat-card">
+      <header class="chat-header">
+        <h1>Chatbot Cây Trồng</h1>
+        <p>Hỏi về cây trồng, đất, phân bón...</p>
+      </header>
+
+      <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+      </div>
+
+      <div id="chatbot-input-container">
+        <input
+          type="text"
+          id="chatbot-input"
+          placeholder="VD: Tôi muốn trồng cây: xoài · hoặc: Tôi muốn trồng cây"
+          autocomplete="off"
+          aria-label="Nhập tin nhắn"
+        />
+        <button id="send-btn" aria-label="Gửi tin nhắn">Gửi</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

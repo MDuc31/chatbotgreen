@@ -1,0 +1,95 @@
+:root{
+  --green:#2e7d32;
+  --green-700:#256c29;
+  --page:#e9f7ee;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --text:#0f172a;
+  --bubble:#f3f4f6;
+  --user:#dff3e0;
+  --radius:18px;
+  --shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--page);color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+}
+
+.page{min-height:100%;display:grid;place-items:center;padding:24px 16px}
+
+.chat-card{
+  width:100%;max-width:860px;background:var(--card);
+  border-radius:22px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.chat-header{background:var(--green);color:#fff;padding:22px 28px;text-align:center}
+.chat-header h1{margin:0 0 4px 0;font-size:28px;font-weight:800}
+.chat-header p{margin:0;opacity:.95}
+
+#chatbot-body{padding:22px;height:60vh;min-height:440px;overflow:auto;background:#fafafa}
+#chatbot-messages{display:flex;flex-direction:column;gap:12px}
+
+.message{
+  max-width:78%;
+  width:fit-content;
+  padding:12px 14px;
+  line-height:1.45;
+  border-radius:16px;
+  word-wrap:break-word;
+  box-shadow:0 2px 8px rgba(0,0,0,.04)
+}
+.message.bot{background:var(--bubble);color:#111827;border-top-left-radius:8px}
+.message.user{margin-left:auto;background:var(--user);border-top-right-radius:8px}
+
+#chatbot-input-container{
+  display:flex;gap:10px;padding:16px;border-top:1px solid #e5e7eb;background:#fff
+}
+#chatbot-input{
+  flex:1;height:48px;padding:0 16px;border:1px solid #e5e7eb;border-radius:999px;
+  outline:none;font-size:16px;background:#fff
+}
+#chatbot-input::placeholder{color:var(--muted)}
+#send-btn{
+  height:48px;padding:0 22px;border:none;border-radius:999px;background:var(--green);
+  color:#fff;font-weight:700;cursor:pointer;transition:transform .05s ease, background .2s ease;
+}
+#send-btn:hover{background:var(--green-700)}
+#send-btn:active{transform:scale(.98)}
+
+/* ====== Bảng nhập 6 thông số ====== */
+.env-form {
+  background:#fff;border:1px solid #e2e8f0;border-radius:16px;
+  padding:18px 20px;margin-top:10px;box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+.env-grid{
+  display:grid;grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px 18px;margin-top:8px
+}
+.env-item{display:flex;flex-direction:column}
+.env-item label{font-size:13px;color:#334155;margin-bottom:6px;font-weight:600}
+.env-item input{
+  height:42px;padding:0 12px;border:1px solid #d1d5db;border-radius:10px;
+  background:#f9fafb;font-size:15px;transition:border-color .2s, box-shadow .2s
+}
+.env-item input:focus{
+  outline:none;border-color:var(--green);
+  box-shadow:0 0 0 2px rgba(46,125,50,.2);background:#fff
+}
+.env-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:16px}
+.env-btn{
+  min-width:120px;height:40px;border:none;border-radius:10px;cursor:pointer;
+  font-weight:700;font-size:15px;transition:all .2s ease
+}
+.env-btn.apply{background:var(--green);color:#fff}
+.env-btn.apply:hover{background:var(--green-700);transform:translateY(-1px)}
+.env-btn.clear{background:#eef2f7;color:#111827}
+.env-btn.clear:hover{background:#e5e7eb;transform:translateY(-1px)}
+
+@media (max-width:640px){
+  #chatbot-body{height:56vh}
+  .message{max-width:90%}
+  .env-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+}
