@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   // chào & hướng dẫn
   appendMessage("bot",
     "Xin chào, tôi tên <b>Green</b> và tôi là chatbot cây trồng của bạn. Bạn cần tôi tư vấn gì?<br>" +
-    "• Gõ: <i>Tôi muốn trồng cây: xoài</i> (kịch bản 1)<br>" +
-    "• Hoặc: <i>Tôi muốn trồng cây</i> (kịch bản 2)"
+    "• Gõ: <i>Tôi muốn trồng cây: xoài</i><br>" +
+    "• Hoặc: <i>Tôi muốn trồng cây</i>"
   );
 
   try{
@@ -398,3 +398,4 @@ function cardForRow(row, subtitle){
   html += `</ul></div>`;
   return html;
 }
+
